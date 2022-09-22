@@ -24,3 +24,8 @@ void vector<T>::clear() {}
 template <typename T>
 void vector<T>::print() const {}
 
+/* Operators */
+template <typename T>
+T& vector<T>::operator[](std::size_t idx) const {
+    return arr[idx];
+}

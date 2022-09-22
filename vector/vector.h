@@ -1,10 +1,18 @@
 // vector.h
 #ifndef VECTOR_H
 #define VECTOR_H
+
+#include <cstdlib>
+
+class vectorBase {
+public:
+    static const int DEFAULT_CAPACITY;
+};
+const int vectorBase::DEFAULT_CAPACITY = 10;
+
 template <typename T>
-class vector {
+class vector: public vectorBase {
 private:
-    static const int DEFAULT_SIZE = 10;
     int size_;
     int capacity_;
 public:
@@ -23,8 +31,14 @@ public:
     void pop_back();
     void clear();
     void print() const;
-    int capacity() { return capacity_; }
-    int size() { return size_; }
+
+    /* Getters */
+    int capacity() const { return capacity_; }
+    int size() const { return size_; }
+    bool empty() const { return size_ == 0; }
+
+    /* Operators */
+    T& operator[](std::size_t idx) const;
 };
 #include "vector.cpp"
 #endif
