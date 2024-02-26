@@ -26,3 +26,5 @@ add_subdirectory(vector)
 
 add_subdirectory(tests)
 
+add_subdirectory(external/gtest)
+add_subdirectory(external/benchmark)
