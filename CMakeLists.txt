@@ -15,7 +15,7 @@ project(Vector)
 enable_testing()
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -lpthread -DPAGE_SIZE=4096")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror -pthread -DPAGE_SIZE=4096")
 
 include_directories(${CMAKE_SOURCE_DIR})
 
@@ -28,3 +28,4 @@ add_subdirectory(tests)
 
 add_subdirectory(external/gtest)
 add_subdirectory(external/benchmark)
+option(CXXFEATURECHECK_DEBUG "Enable debug output for feature checking" ON)
